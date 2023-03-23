@@ -449,43 +449,165 @@
 // const newArr4 = newArr2.split(',');
 // console.log(newArr4); //["Gokul", "Gokul", "Sarvesh"]
 
-/////////*********************/Objects**************************/////////////////////
+/////////*********************/Objects Methods**************************/////////////////////
 
-const myObi = {name:"Sarvesh", age:20, isHappy:true};
-console.log(myObi); //{name: "Sarvesh", age: 20, isHappy: true}
-console.log(myObi.name); //Sarvesh
-console.log(myObi.isHappy); //true
+// const myObi = {name:"Sarvesh", age:20, isHappy:true};
+// console.log(myObi); //{name: "Sarvesh", age: 20, isHappy: true}
+// console.log(myObi.name); //Sarvesh
+// console.log(myObi.isHappy); //true
 
-myObi.name="Gokul";
-console.log(myObi); //{name: "Gokul", age: 20, isHappy: true}
+// myObi.name="Gokul";
+// console.log(myObi); //{name: "Gokul", age: 20, isHappy: true}
 
-const anotherObj = {
-    name:"Sarvesh",
-    isHappy: function(){
-        return "Yes I am happy"
-    }
-}
-console.log(anotherObj.isHappy()); //Yes I am happy
+// const anotherObj = {
+//     name:"Sarvesh",
+//     isHappy: function(){
+//         return "Yes I am happy"
+//     }
+// }
+// console.log(anotherObj.isHappy()); //Yes I am happy
 
-const anotherObj1 = {
-    name:"Sarvesh",
-    isHappy:{
-        holiday:true
-    },
-    isSad:{
-        holiday:false
-    }
-}
-console.log(anotherObj1.isHappy.holiday); //true
-console.log(anotherObj1.isSad.holiday); //false
+// const anotherObj1 = {
+//     name:"Sarvesh",
+//     isHappy:{
+//         holiday:true
+//     },
+//     isSad:{
+//         holiday:false
+//     }
+// }
+// console.log(anotherObj1.isHappy.holiday); //true
+// console.log(anotherObj1.isSad.holiday); //false
 
-const anotherObj2 = {
-    name:"sarvesh",
-    dob:[27,07,2002],
-}
-console.log(anotherObj2.dob); //[27, 07, 2002]
-console.log(anotherObj2.dob[0]); //27
-console.log(anotherObj2.dob[1]); //07
-console.log(anotherObj2.dob[2]); //2002
+// const anotherObj2 = {
+//     name:"sarvesh",
+//     dob:[27,07,2002],
+// }
+// console.log(anotherObj2.dob); //[27, 07, 2002]
+// console.log(anotherObj2.dob[0]); //27
+// console.log(anotherObj2.dob[1]); //07
+// console.log(anotherObj2.dob[2]); //2002
 
 
+
+// const anotherObj3 = {
+//     name:"Sarvesh",
+//     age : 20,
+//     isHappy: function(){
+//         return "Yes I am happy"
+//     }
+// }
+// console.log(anotherObj3["age"]); //20
+
+// const anotherObj4 = {
+//     name:"Sarvesh",
+//     age : 20,
+//     isHappy: function(){
+//         return `Yes I am happy and my name is ${this.name}`
+//     }
+// }
+// console.log(anotherObj4.isHappy()); //Yes I am happy and my name is Sarvesh
+
+// const vehicle = {
+//     name:"Swift",
+//     door:4,
+//     engine:function(){
+//         return `This is ${this.name}'s engine`
+//     }
+// }
+// console.log(vehicle); //{name: "Swift", door: 4, engine: ƒ}
+// console.log(vehicle.name); //Swift
+// console.log(vehicle.door); //4
+// console.log(vehicle.engine()); //This is Swift's engine
+
+// const maruti = Object.create(vehicle);
+// console.log(maruti); //{}
+// console.log(maruti.name); //Swift
+// console.log(maruti.engine()); //This is Swift's engine
+
+// maruti.name="Baleno";
+// console.log(maruti); //{name: "Baleno"}
+// console.log(maruti.name); //Baleno
+// console.log(maruti.engine()); //This is Baleno's engine
+// console.log(maruti.door); //4
+
+// const maruti1 = Object.create(vehicle,{
+//     name:{value:"Baleno"},
+//     door:{value:4}
+// });
+// console.log(maruti1); //{name: "Baleno", door: 4}
+// console.log(maruti1.name); //Baleno
+// console.log(maruti1.door); //4
+// console.log(maruti1.engine()); //This is Baleno's engine
+
+// const tesla = Object.create(vehicle);
+// tesla.name="Tesla";
+// tesla.door=4;
+// tesla.engine = function(){
+//     return `This is ${this.name}'s engine`
+// }
+// console.log(tesla); //{name: "Tesla", door: 4, engine: ƒ}
+// console.log(tesla.engine()); //This is Tesla's engine
+
+///////////////////////////////**************Object Methods**************/////////////////////////
+
+//         const flim={
+//             actor:"Sarvesh",
+//             music:"Anirudh",
+//             director:"Lokesh",
+//             movie:"Rolex2.0"
+//         }
+
+// console.log(Object.keys(flim)); //["actor", "music", "director", "movie"]
+// console.log(Object.values(flim)); //["Sarvesh", "Anirudh", "Lokesh", "Rolex2.0"]
+
+
+// for(let job in flim){
+//     console.log(flim[job]);
+    
+// }
+// flim.actress="Trisha";
+// for(let job in flim){
+//     console.log(`${job} : ${flim[job]}`);
+// }
+
+// // actor : Sarvesh
+// // music : Anirudh
+// // director : Lokesh
+// // movie : Rolex2.0
+// // actress : Trisha
+// console.log(flim.hasOwnProperty("actress")); //true
+
+// delete flim.actress;
+// for(let job in flim){
+//     console.log(`${job} : ${flim[job]}`);
+// }
+// // actor : Sarvesh
+// // music : Anirudh
+// // director : Lokesh
+// // movie : Rolex2.0
+// console.log(flim.actress); //undefined
+
+// console.log(flim.hasOwnProperty("actor")); //true
+// console.log(flim.hasOwnProperty("actress")); //false
+
+// ////Object destructuring
+
+// const {music:myFavDir,director:myFav} = flim;
+// console.log(myFavDir,myFav); //Anirudh
+
+// const {actor,music,director,movie} = flim;
+// console.log(music); //Anirudh
+
+
+// function sings({music}){
+//     return music;
+// }
+// console.log(sings(flim)); // Anirudh
+
+// const {music} = flim;
+
+// function sings({music}){
+//     return music;
+// }
+// console.log(sings(flim));
