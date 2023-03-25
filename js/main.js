@@ -905,3 +905,92 @@
 // }finally{
 //     //code
 // }
+
+"use strict";
+// const makeError = ()=>{
+//     try{
+//         const name = "sarvesh";
+//         name = "gokulsarvesh";
+//     }
+//     catch(err){
+//         // console.log(err);
+//         // console.warn(err);
+//         // console.error(err); //commonly used
+//         // console.error(err.name); //commonly used
+//         console.error(err.stack);
+//         // console.table(err);
+//     }
+// }
+// makeError();
+
+// const makeCustomError = ()=>{
+//     try{
+//         throw new customError("This is custom error");
+//     }
+//     catch(err){
+//         console.error(err.stack);
+//     }
+
+// }
+// makeCustomError();
+
+// function customError(message){
+//     this.message = message;
+//     this.name = "CustomError";
+//     this.stack = `${this.name}:${this.message}`
+// };
+
+// const makeCustomError1 = ()=>{
+//     try{
+//         throw new Error("This is custom error");
+//     }
+//     catch(err){
+//         console.error(err);
+//     }
+
+// }
+// makeCustomError1(); //
+// // Error: This is custom error
+// // at makeCustomError1 (main.js:945:15)
+// // at main.js:952:1
+// // makeCustomError1 @ main.js:948
+// // (anonymous) @ main.js:952 
+
+// const makeCustomError2 = ()=>{
+//         let i =0;
+//         while(i<=5){
+//             try{
+//                 throw new Error("This is custom error");
+//             }
+//             catch(err){
+//                 console.error(err.stack);
+//             }finally{
+//                 console.log("This is finally block");
+//                 i++;
+//             }
+//         }
+//     };
+//     makeCustomError2(); //This is finally block and error message will be printed 6 times
+
+    // const makeCustomError3 = ()=>{
+    //     let i =0;
+    //     while(i<=5){
+    //         try{
+    //             if(i%2 !==0){
+    //                 throw new Error("This is Odd error");
+    //             }
+    //             console.log("Even number");
+    //         }
+    //         catch(err){
+    //             console.error(err.message);
+    //         }finally{
+    //             console.log("This is finally block");
+    //             i++;
+    //         }
+    //     }
+    // };
+    // makeCustomError3(); //This is finally block and error message will be printed 6 times 
+
+
+    
+
