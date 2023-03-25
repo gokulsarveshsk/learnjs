@@ -579,6 +579,7 @@
 // console.log(flim.hasOwnProperty("actress")); //true
 
 // delete flim.actress;
+
 // for(let job in flim){
 //     console.log(`${job} : ${flim[job]}`);
 // }
@@ -611,3 +612,296 @@
 //     return music;
 // }
 // console.log(sings(flim));
+
+                                    // object destructoring///
+// array
+// const x = [1, 2, 3, 4, 5];
+// const [y, z, a] = x;
+// console.log(y); //1
+// console.log(z); //2
+// console.log(a); //3
+
+
+// const obj = { f: 1, g: 2 };
+// const { f, g } = obj;
+// // is equivalent to:
+// // const a = obj.a;
+// // const b = obj.b;
+// console.log(f); //1
+// console.log(g); //2
+
+
+                                    ////////// classes////////////
+// // Object
+// const flim = {
+//     director:"Sarvesh",
+//     dateOfrelease:2023,
+//     release : function() {
+//         return console.log(`Rolex 2.0 is release on ${this.dateOfrelease} by ${this.director}`);
+//     }
+// }
+// flim.release(); //Rolex 2.0 is release on 2023 by Sarvesh
+
+// class Flim{
+//     constructor(){
+//         this.director = "Sarvesh";
+//         this.dateOfrelease = "2023";
+//     }
+//     release(){
+//         return console.log(`Rolex 2.0 is release on ${this.dateOfrelease} by ${this.director}`);
+//     }
+// }
+// const flimObj = new Flim()
+// flimObj.release(); //Rolex 2.0 is release on 2023 by Sarvesh
+// console.log(flimObj.actor); //Sarvesh
+
+
+// // parameterized constructor
+
+// class flimA{
+//     constructor(movieName,typeMovie,flimRelease,flimDirector){
+//         this.movie = movieName
+//         this.type = typeMovie;
+//         this.dateOfrelease = flimRelease;
+//         this.director = flimDirector;
+//         this.region = "Tamilnadu";
+//     }
+//     release(){
+//         return console.log(`${this.movie} an ${this.type} movie release on ${this.dateOfrelease} by ${this.director } from ${this.region}`);
+//     }
+// }
+// const flimObj2 = new flimA("Rolex 2.0","Action","2023","Sarvesh")
+// flimObj2.release(); //Rolex 2.0 an Action movie release on 2023 by Sarvesh from Tamilnadu
+
+// const filmObj3 = new flimA("Ponniyin Selvan","Historical fiction","this July","Gokulsarvesh");
+// filmObj3.release(); //Ponniyin Selvan an Historical fiction movie release on this July by Gokulsarvesh from Tamilnadu
+
+// filmObj3.region = "Kerala";
+// filmObj3.release(); //Ponniyin Selvan an Historical fiction movie release on this July by Gokulsarvesh from Kerala
+
+
+
+// getter and setter  
+
+// class flimIndustry{
+//     constructor(movieName,typeMovie,flimRelease,flimDirector){
+//         this.movie = movieName
+//         this.type = typeMovie;
+//         this.dateOfrelease = flimRelease;
+//         this.director = flimDirector;
+//         this.region = "Tamilnadu";
+//     }
+//     get regionIs(){
+//         return this.region;
+//     }
+//     set regionIs(regionIs){
+//         this.region = regionIs;
+//     }
+//     release(){
+//         return console.log(`${this.movie} an ${this.type} movie release on ${this.dateOfrelease} by ${this.director } from ${this.region}`);
+//     }
+// }
+// const flimObj4 = new flimIndustry("Rolex 2.0","Action","2023","Sarvesh")
+// flimObj4.release(); //Rolex 2.0 an Action movie release on 2023 by Sarvesh from Tamilnadu
+// flimObj4.regionIs = "Kerala";
+// flimObj4.release(); //Rolex 2.0 an Action movie release on 2023 by Sarvesh from Kerala
+
+  // the above one is confusing getter setter parameters so i am using the below one
+
+//   class flimIndustryRestructured{
+//         constructor(movieName,typeMovie,flimRelease,flimDirector){
+//             this.movie = movieName
+//             this.type = typeMovie;
+//             this.dateOfrelease = flimRelease;
+//             this.director = flimDirector;
+//             this.region = "Tamilnadu";
+//         }
+//         getRegion(){
+//             return this.region;
+//         }
+//         setRegion(regionIs){
+//             this.region = regionIs;
+//         }
+//         release(){
+//             return console.log(`${this.movie} an ${this.type} movie release on ${this.dateOfrelease} by ${this.director } from ${this.region}`);
+//         }
+//     }
+//     const flimObj5 = new flimIndustryRestructured("Rolex 2.0","Action","2023","Sarvesh")
+//     flimObj5.release(); //Rolex 2.0 an Action movie release on 2023 by Sarvesh from Tamilnadu
+//     console.log(flimObj5.region); //Tamilnadu
+//     // (or)
+//     console.log(flimObj5.getRegion()); //Tamilnadu
+
+
+//     flimObj5.setRegion("Kerala");
+//     console.log(flimObj5.region); //Kerala
+//     // (or)
+//     console.log(flimObj5.getRegion()); //Kerala
+//     flimObj5.release(); //Rolex 2.0 an Action movie release on 2023 by Sarvesh from Kerala
+
+//     /////////////////////// multiple setter and getter////////////////////
+
+//     class flimIndustryMultipleRegion{
+//         constructor(movieName,typeMovie,flimRelease,flimDirector){
+//             this.movie = movieName
+//             this.type = typeMovie;
+//             this.dateOfrelease = flimRelease;
+//             this.director = flimDirector;
+//             this.region = [];
+//         }
+//         getRegion(){
+//             return this.region;
+//         }
+//         setRegion(regionIs){
+//             this.region.push(regionIs);
+//         }
+//         release(){
+//             return console.log(`${this.movie} an ${this.type} movie release on ${this.dateOfrelease} by ${this.director } from ${this.region}`);
+//         }
+//     }
+//     const flimObj6 = new flimIndustryMultipleRegion("Rolex 2.0","Action","2023","Sarvesh")
+//     flimObj6.release(); //Rolex 2.0 an Action movie release on 2023 by Sarvesh from Tamilnadu
+//     console.log(flimObj6.region); // []
+//     // (or)
+//     console.log(flimObj6.getRegion()); // []
+
+
+//     flimObj6.setRegion("Kerala");
+//     console.log(flimObj6.region); // [Kerala]
+//     // (or)
+//     console.log(flimObj6.getRegion()); // [Kerala]
+//     flimObj6.release(); //Rolex 2.0 an Action movie release on 2023 by Sarvesh from Kerala
+
+//     flimObj6.setRegion("Tamilnadu");
+//     console.log(flimObj6.region); // [Kerala,Tamilnadu]
+//     // (or)
+//     console.log(flimObj6.getRegion()); // [Kerala,Tamilnadu]
+//     flimObj6.release(); //Rolex 2.0 an Action movie release on 2023 by Sarvesh from Kerala,Tamilnadu
+
+
+// class flimIndustry1{
+//             constructor(flimDirector){
+//                 this.genre = "Action";
+//                 this.director = flimDirector;
+//             }
+//             getGenre(){
+//                 return this.genre;
+//             }
+//             setRegion(genreIs){
+//                 this.genre = genreIs;
+//             }
+            
+// }
+// class flimIndustry2 extends flimIndustry1{
+//     constructor(flimDirector){
+//         super(flimDirector);
+//         this.movie = "Rolex 2.0";
+//     }
+//     Movie(){
+//         console.log(`${this.movie} an ${this.genre} movie release on 2023 by ${this.director }`);
+//     }
+// }
+// const flimObj7 = new flimIndustry2("Sarvesh");
+// flimObj7.Movie(); //Rolex 2.0 an Action movie release on 2023 by Sarvesh
+
+//Factory function - function that returns an object and can be reused to create multiple object with the same structure
+
+// function flimFactoty(flimDirector){
+//     const movie = "Rolex 2.0";
+//     const director = flimDirector;
+//     return{
+//         movie: ()=>{
+//             console.log(`${movie} an Action movie release on 2023 by ${director}`)
+//         }
+//     }
+// }
+
+// const flimObj8 = flimFactoty("Sarvesh"); // flimObj8 is an object with movie and director property
+// flimObj8.movie(); //Rolex 2.0 an Action movie release on 2023 by Sarvesh
+// console.log(flimObj8.movie); //[Function: movie]
+// console.log(flimObj8.director); //undefined
+
+// // _propertyName - this is a convention to indicate that the property is private. change this by setter and getter method
+
+// class flimIndustry3{
+//     #genre = "Action";
+//     movie = "Rolex 2.0";
+//     constructor(flimDirector){
+//         this.director = flimDirector; 
+//     }
+//     getGenre(){
+//         return this.genre;
+//     }
+//     setRegion(genreIs){
+//         this.genre = genreIs;
+//     }
+//     getMovie(){
+//         return console.log(`${this.#movie} an ${this.genre} movie release on 2023 by ${this.director }`);
+//     }
+    
+// }
+// const flimObj9 = new flimIndustry3("Sarvesh");
+// flimObj9.getMovie(); //Rolex 2.0 an Action movie release on 2023 by Sarvesh
+// console.log(flimObj9.genre); //undefined
+// console.log(flimObj9.getGenre()); //Action
+// console.log(flimObj9.director); //[Function: getMovie]
+// console.log(flimObj9.movie); //Rolex 2.0
+
+////////////////////////////////// Javascript object notation - JSON - language independent data format - used to store and transfer data - key value pair - key is always string and value can be string, number, boolean, array, object, null ////////////////////////////////// 
+
+// const myObj10 = {
+//     name :"Sarvesh",
+//     dob : [27,07,2002],
+//     isMarried : false,
+//     content:() =>{
+//         console.log("Pursuing BE in CSE");
+//     }
+// };
+// console.log(myObj10); //{ name: 'Sarvesh', dob: [ 27, 7, 2002 ], isMarried: false, content: [Function: content] }
+// console.log(myObj10.name); //Sarvesh
+// console.log(myObj10.dob); //[ 27, 7, 2002 ]
+// console.log(myObj10.isMarried); //false
+// myObj10.content(); //Pursuing BE in CSE
+
+// const sendJson = JSON.stringify(myObj10);
+// console.log(sendJson); //{"name":"Sarvesh","dob":[27,7,2002],"isMarried":false,"content":null}
+// console.log(sendJson.name); //undefined
+// console.log(sendJson.dob); //undefined
+// console.log(typeof sendJson); //string - JSON.stringify() convert object to string
+// console.log(typeof(myObj10)); //object
+
+// const reciveJson = JSON.parse(sendJson); // JSON.parse() convert string to object
+// console.log(reciveJson); //{ name: 'Sarvesh', dob: [ 27, 7, 2002 ], isMarried: false, content: null }
+// console.log(reciveJson.name); //Sarvesh
+// console.log(reciveJson.dob); //[ 27, 7, 2002 ]
+// console.log(reciveJson.isMarried); //false
+// console.log(typeof reciveJson); //object
+// console.log(typeof(sendJson)); //string
+
+// Erros and error handling
+// variable = 10;
+// console.log(variable); //10
+// ----------------------- but using strict mode it will throw error-----------------------------
+// "use strict";
+
+// variable = 10;
+// console.log(variable); //ReferenceError: variable is not defined
+
+///to avoid this 
+// const variable1 = 10;
+// console.log(variable1); //10
+// variable1 = 20; 
+// console.log(variable1); //TypeError: Assignment to constant variable.
+
+// Object..create() // Syntax: Object.create(proto, [propertiesObject]) - creates a new object with the specified prototype object and properties - proto - object which should be the prototype of the newly-created object - propertiesObject - optional - object to which the newly-created object's prototype will be set
+// ----------------------------------------------------------------
+
+// ErrorHandling
+
+// try{
+//     //code
+// }catch(error){
+//     //code
+// }finally{
+//     //code
+// }
