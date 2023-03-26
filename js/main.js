@@ -906,7 +906,7 @@
 //     //code
 // }
 
-"use strict";
+// "use strict";
 // const makeError = ()=>{
 //     try{
 //         const name = "sarvesh";
