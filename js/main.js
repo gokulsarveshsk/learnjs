@@ -991,7 +991,28 @@
     // };
     // makeCustomError3(); //This is finally block and error message will be printed 6 times 
 
-    
 
-    
+// WebApi
+document.addEventListener
+("readystatechange",(event)=>{
+    if(event.target.readyState==="complete"){
+        // alert("Page is loaded");
+        console.log("Page is loaded");
+        initApp();
+    }
+})
 
+
+const initApp=()=>{
+  const myObj11 = { 
+    name:"Rolex",
+    myContent: ["Rolex 2.0","Action","2023","Sarvesh"],
+    logName:function(){
+      console.log(this.name);
+    }
+  };
+  localStorage.setItem("mySession",
+  JSON.stringify(myObj11));
+  const mySession = localStorage.getItem("mySession");
+  console.log(mySession);
+}
